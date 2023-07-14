@@ -27,3 +27,5 @@ This could be related to inefficient data sorting, large datasets, inefficient d
 On the frontend, I've generally used manual debugging to add/remove components to track down which is causing issues, or using browser profiling, but not too familiar with it.
 
 For backend, using xdebug, clockwork, statistical monitoring (database, CPU, memory, response times, etc)
+
+Yes I have had to do this for Database queries (n+1), for finding an infinite loops of an API calling itself, crashing production.
