@@ -13,11 +13,11 @@ type Props = {
 
 export default function Show({ auth, todo_list: { id, name, items } }: PageProps<Props>) {
 
-    const updateCompleted = useCallback((item_id: number, completed: boolean) => {
+    const updateItem = useCallback((item_id: number, data: object) => {
         router.patch(route('todo-list-items.update', {
             todo_list: id,
             item: item_id,
-        }), { completed })
+        }), { ...data })
     }, [id])
 
     const destroyItem = useCallback((item_id: number) => {
@@ -42,7 +42,7 @@ export default function Show({ auth, todo_list: { id, name, items } }: PageProps
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
                         <div className="text-gray-900 dark:text-gray-100">
-                            <TodoListItemTable todos={items} id={id} updateCompleted={updateCompleted} destroyItem={destroyItem} />
+                            <TodoListItemTable todos={items} id={id} update={updateItem} destroyItem={destroyItem} />
                         </div>
                     </div>
                 </div>

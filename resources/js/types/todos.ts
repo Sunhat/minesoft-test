@@ -1,7 +1,7 @@
 
 export type TodoListItem = {
     id: number
-    name: number
+    name: string
     completed: boolean
 }
 
