@@ -2,8 +2,9 @@
 
 This project supports Laravel Sail, but I used php artisan serve.
 
-Node version locally used 16, although it should work with new versions.
+Node version locally used 16, although it should work with newer versions.
 
+- Copy .env.example
 
 ```
 npm install

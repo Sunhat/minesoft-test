@@ -6,6 +6,7 @@ use App\Http\Requests\TodoList\TodoListStoreRequest;
 use App\Http\Requests\TodoList\TodoListUpdateRequest;
 use App\Models\TodoList;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -66,7 +67,7 @@ class TodoListController extends Controller
         /** @var User $user */
         $user = auth()->user();
 
-        return Inertia::render('TodoList/Edit', [
+        return Inertia::render('TodoList/Edit/Edit', [
             'todo_list' => $user->todoLists()->findOrFail($id),
         ]);
     }
@@ -74,7 +75,7 @@ class TodoListController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(TodoListUpdateRequest $request, string $id): Response
+    public function update(TodoListUpdateRequest $request, string $id): RedirectResponse
     {
         /** @var User $user */
         $user = auth()->user();
@@ -82,7 +83,9 @@ class TodoListController extends Controller
         $list = $user->todoLists()->findOrFail($id);
         $list->update($request->validated());
 
-        return Inertia::render('TodoList/Update', []);
+        return redirect()->route('todo-lists.show', [
+            'todo_list' => $id,
+        ]);
     }
 
     /**

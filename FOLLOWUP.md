@@ -1,7 +1,7 @@
 1. How long did you spend on the coding test?
-    - Worked 7.30am to 9.30am
-    - Worked 2pm to ~4pm
-
+    - Worked 8am to ~9am
+    - Worked 2pm to ~5pm, including this FOLLOWUP
+    - Not without some distractions
 
 2. Which parts were the most challenging?
 
