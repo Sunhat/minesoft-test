@@ -16,6 +16,7 @@ As I was trying to move fast, I did not introduce Axios for API requests, use a 
 - UI/UX considerations for the forms. Create Todo row should have "Add an Item" button, that on press reveals the form. Submission hides again.
 - Re-ordering / sorting
 - Trello Lists each todo-list and its items. Much nicer UI, but a lot do.
+- Saving more than one todo item clears the other edited fields, due to Inertia reload
 
 4. How would you track down a performance issue in production? Have you ever had to do this?
 
@@ -23,4 +24,6 @@ Track down? Performance may come from backend or frontend.
 
 This could be related to inefficient data sorting, large datasets, inefficient database queries,
 
-On the frontend, I've generally used manual debugging to add/remove components to track down which
+On the frontend, I've generally used manual debugging to add/remove components to track down which is causing issues, or using browser profiling, but not too familiar with it.
+
+For backend, using xdebug, clockwork, statistical monitoring (database, CPU, memory, response times, etc)
